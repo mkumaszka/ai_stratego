@@ -48,7 +48,7 @@
             <Text layoutX="41.0" layoutY="368.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Points:" />
             <Text fx:id="p2points" layoutX="115.0" layoutY="368.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0" />
             <Text layoutX="33.0" layoutY="477.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Board size" />
-            <Text layoutX="8.0" layoutY="52.0" strokeType="OUTSIDE" strokeWidth="0.0" text="STRATEGO" textAlignment="CENTER" wrappingWidth="212.482421875">
+            <Text fx:id="stratego" layoutX="8.0" layoutY="52.0" strokeType="OUTSIDE" strokeWidth="0.0" text="STRATEGO" textAlignment="CENTER" wrappingWidth="212.482421875" onMouseClicked="#computerMove">
                <font>
                   <Font size="35.0" />
                </font>

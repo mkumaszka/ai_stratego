@@ -48,6 +48,8 @@ public class Controller {
     String turn1 = "PLAYER 1";
     String turn2 = "PLAYER 2";
 
+    int depth = 2; //Tu trzeba koniecznie pobrać to od usera!
+
     public void initialiseBoard() {
         fillChoiceBox(player1);
         fillChoiceBox(player2);
@@ -63,7 +65,7 @@ public class Controller {
         turn.setText("PLAYER 1");
         p1points.setText("0");
         p2points.setText("0");
-        game = new StrategoGame(Integer.parseInt(boardSize.getText()), player1.getValue(), player2.getValue());
+        game = new StrategoGame(Integer.parseInt(boardSize.getText()), player1.getValue(), player2.getValue(),depth);
 
         gp.setGridLinesVisible(true);
         while(gp.getRowConstraints().size() > 0){
@@ -116,10 +118,11 @@ public class Controller {
         if(game.player_move(row, column)){
             makeMove(row, column);
         }
-        if (game.isCurrentPlayerComputer()){
-            int[] move = game.computer_move();
-            makeMove(move[0],move[1]);
-        }
+    }
+
+    public void computerMove(){
+        int[] move = game.computer_move();
+        makeMove(move[1],move[0]);
     }
 
     private void makeMove(int row, int column){
